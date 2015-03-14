@@ -1,0 +1,20 @@
+Are you using the service for an organization (2, 3)
+Are 140-character messages enough (17, 18)
+Is getting news (earthquakes, revolutions, zombie attacks, etc.) 4.5 minutes before CNN important to you? (17, 4)
+Are updates from friends and family more important than from people with similar interests? (18, 5)
+Do you want to edit posts and comments after-the-fact? (19, 6)
+Do you want discussions to be threaded? (7, 17)
+Do you want people mentionned in posts to be notified? (19, 8)
+Do you want big in-line pictures? (19, 9)
+Can you categorize your friends and family? (10, 18)
+Are you willing to do work to categorize them? (11, 18)
+Are your parents on Facebook? (12, 13)
+Do you post stuff you want to hide from them? (19, 13)
+Do you think Facebook in no longer cool? (19, 14)
+Are you tired of answering questions? (20, 15)
+I'm tired of formulating them
+===================================================================================
+Twitter
+Facebook
+Google+
+Google+ or Facebook
