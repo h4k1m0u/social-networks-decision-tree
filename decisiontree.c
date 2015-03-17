@@ -48,7 +48,7 @@ node_t* generate_tree_from_file(char *filename) {
     while ((read = getline(&line, &len, f)) != -1) {
         // save node val
         nodes_vals[i] = malloc(sizeof(char) * (strlen(line) - 5));
-        strncpy(nodes_vals[i], line + 6, strlen(line) - 5);
+        strncpy(nodes_vals[i], line + 6, strlen(line) - 7);
 
         // save node children indexes
         child_left = malloc(sizeof(char) * 2);
@@ -84,19 +84,30 @@ node_t* generate_tree_from_file(char *filename) {
     return nodes[1];
 }
 
-void traversal(node_t *node) {
-}
-
 int main() {
     // generate a decision tree from file
     node_t *root = generate_tree_from_file("decisiontree.txt");
+    printf("_______________________________________________________________\n\n");
+    printf("Answer these questions to find your ideal Social Network [y/n]:\n");
+    printf("_______________________________________________________________\n\n");
 
-    // decision tree traversal
+    // decision tree traversal (game loop)
     node_t *node = root;
-    while (node != NULL) {
-        printf("node: %s", node->val);
-        node = node->right;
+    char  c;
+    int i = 0;
+    while (node->right != NULL && node->left != NULL) {
+        printf("%s: ", node->val);
+
+        // read char from stdin
+        while ((c = getchar()) != '\n')
+            if (c == 'y')
+                node = node->left;
+            else if (c == 'n')
+                node = node->right;
     }
+
+    // print found result
+    printf("\nYour ideal Social Network is: %s", node->val);
 
     return 0;
 }
