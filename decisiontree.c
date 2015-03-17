@@ -87,23 +87,29 @@ node_t* generate_tree_from_file(char *filename) {
 int main() {
     // generate a decision tree from file
     node_t *root = generate_tree_from_file("decisiontree.txt");
-    printf("_______________________________________________________________\n\n");
-    printf("Answer these questions to find your ideal Social Network [y/n]:\n");
-    printf("_______________________________________________________________\n\n");
+    printf("________________________________________________________________\n\n");
+    printf("Answer these questions to find your ideal Social Network [y/n/q]:\n");
+    printf("________________________________________________________________\n\n");
 
     // decision tree traversal (game loop)
     node_t *node = root;
-    char  c;
-    int i = 0;
+    int c;
     while (node->right != NULL && node->left != NULL) {
         printf("%s: ", node->val);
 
-        // read char from stdin
-        while ((c = getchar()) != '\n')
-            if (c == 'y')
+        // read char from stdin (only one char at a time)
+        c = getchar();
+        while (getchar() != '\n');
+        switch (c) {
+            case 'y':
                 node = node->left;
-            else if (c == 'n')
+                break;
+            case 'n':
                 node = node->right;
+                break;
+            case 'q':
+                return 0;
+        }
     }
 
     // print found result
